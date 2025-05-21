@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key-for-de
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'  # default True if not set
 
-ALLOWED_HOSTS = ['JobTracking.azurewebsites.net', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['jobtracking-f8hzddhzgsdreafa.centralus-01.azurewebsites.net', 'localhost', '127.0.0.1']
 
 
 # Application definition
