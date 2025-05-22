@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key-for-de
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'  # default True if not set
 
-ALLOWED_HOSTS = ['jobtracking-f8hzddhzgsdreafa.centralus-01.azurewebsites.net', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['jobtracking-f8hzddhzgsdreafa.centralus-01.azurewebsites.net', 'www.jobtracking-f8hzddhzgsdreafa.centralus-01.azurewebsites.net', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -124,6 +124,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://jobtracking-f8hzddhzgsdreafa.centralus-01.azurewebsites.net',
+]
 
 LOGIN_REDIRECT_URL = 'dashboard'  # Directs user to the dashboard after login
 LOGOUT_REDIRECT_URL = '/'  # After logout, redirects to a page informing the user they're logged out
