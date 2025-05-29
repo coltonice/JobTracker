@@ -1,10 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Are you sure you want to delete '{{ job.position }}' at {{ job.company_name }}?</h2>
-<form method="post">
-  {% csrf_token %}
-  <button type="submit">Yes, delete</button>
-</form>
-<a href="{% url 'dashboard' %}">Cancel</a>
+<div class="container mt-5">
+  <div class="card shadow-sm mx-auto" style="max-width: 600px;">
+    <div class="card-body text-center">
+      <h3 class="mb-4 text-danger">
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        Are you sure you want to delete
+        <strong>"{{ job.position }}"</strong> at <strong>{{ job.company_name }}</strong>?
+      </h3>
+      <form method="post" class="d-inline">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-lg me-3">
+          Yes, delete
+        </button>
+      </form>
+      <a href="{% url 'dashboard' %}" class="btn btn-secondary btn-lg">
+        Cancel
+      </a>
+    </div>
+  </div>
+</div>
 {% endblock %}

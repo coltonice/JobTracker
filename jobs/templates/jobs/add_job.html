@@ -1,11 +1,26 @@
 {% extends "base.html" %}
 
+{% block title %}Add Job Application{% endblock %}
+
 {% block content %}
-<h2>Add Job Application</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Add</button>
-</form>
-<a href="{% url 'dashboard' %}">Back</a>
+<div class="container mt-5">
+  <div class="card shadow-sm border-0">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0"><i class="fas fa-briefcase me-2"></i>Add Job Application</h4>
+    </div>
+    <div class="card-body">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success mt-3">
+          <i class="fas fa-plus-circle me-1"></i>Add Job
+        </button>
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary mt-3 ms-2">
+          <i class="fas fa-arrow-left me-1"></i>Back to Dashboard
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
+
